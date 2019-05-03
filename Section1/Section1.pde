@@ -40,14 +40,26 @@ class Visualizer {
 
     //???WRITE THIS METHOD FIRST!!!
     //THESE ARE WRONG: They just illustrate how they could look
-    fill(255, 0, 0);
-    rect(x+40, y+100, 60, 50);
-    fill(0, 255, 0);
-    rect(x+120, y+50, 60, 50);
-
+      /*
+      fill(255, 0, 0);
+      rect(x+40, y+100, 60, 50);
+      fill(0, 255, 0);
+      rect(x+120, y+50, 60, 50);
+      */
 
     //Width of the visualizer is 400!
-
+    for (int i = 0; i < values.length; i++){
+       float var = values[i]; 
+       if (var < 0){
+         fill(255,0,0);
+         rect(x+40*i, y+100, 40, -1 * var);
+       }
+       if (var > 0){
+         fill(0,255,0); 
+         rect(x+40*i, y+100, 40, -1 * var); 
+       }
+       
+    }
   
   }
   void update() {
